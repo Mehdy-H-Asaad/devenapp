@@ -8,7 +8,7 @@ import { TUser } from "../../types/auth.types";
 
 export const useLogin = () => {
 	const navigate = useNavigate();
-	const { isPending, queryClient, mutate } = useApiMutation<
+	const { isPending, queryClient, mutate, data } = useApiMutation<
 		TUser,
 		TLoginSchema
 	>({
@@ -18,7 +18,9 @@ export const useLogin = () => {
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ["user"] });
 			navigate("/");
+			localStorage.setItem("token", data?.access_token!);
 		},
+		queryKey: ["user"],
 	});
 
 	const loginSchema = baseAuthSchema.pick({
