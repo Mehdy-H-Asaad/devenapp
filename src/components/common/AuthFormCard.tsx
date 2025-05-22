@@ -5,10 +5,10 @@ import {
 	CardTitle,
 	CardDescription,
 	CardContent,
-} from "./ui/card";
+} from "../ui/card";
 import React from "react";
 import { LogoSwitcher } from "./LogoSwitcher";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 type TAuthFormCardProps = {
 	cardTitle: string;

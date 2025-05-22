@@ -1,4 +1,4 @@
-import { useStepGuard } from "@/hooks/useStepGurad";
+import { useStepGuard } from "@/shared/hooks/useStepGurad";
 import React from "react";
 import { Navigate } from "react-router-dom";
 

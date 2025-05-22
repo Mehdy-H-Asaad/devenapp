@@ -1,7 +1,7 @@
 import React from "react";
-import LightLogo from "../assets/imgs/deven-high-resolution-logo-transparent-light.png";
-import DarkLogo from "../assets/imgs/deven-high-resolution-logo-transparent.png";
-import { useTheme } from "@/services/ThemeProvider";
+import LightLogo from "../../assets/imgs/deven-high-resolution-logo-transparent-light.png";
+import DarkLogo from "../../assets/imgs/deven-high-resolution-logo-transparent.png";
+import { useTheme } from "@/shared/services/ThemeProvider";
 import { cn } from "@/lib/utils";
 
 export const LogoSwitcher = ({

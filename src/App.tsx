@@ -3,11 +3,9 @@ import { AppRoutes } from "./AppRoutes";
 
 function App() {
 	return (
-		<>
-			<BrowserRouter>
-				<AppRoutes />
-			</BrowserRouter>
-		</>
+		<BrowserRouter>
+			<AppRoutes />
+		</BrowserRouter>
 	);
 }
 export default App;

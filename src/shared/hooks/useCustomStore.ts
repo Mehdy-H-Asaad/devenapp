@@ -7,7 +7,7 @@ type TCustomStore<T> = {
 	reset: (newInitial?: T) => void;
 };
 
-export const createCustomStore = <T>(
+export const useCustomStore = <T>(
 	initialData: T,
 	persistOptions?: {
 		shouldPersist?: boolean;

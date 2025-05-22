@@ -1,5 +1,5 @@
-import { axiosClient } from "@/api/axios";
-import { customToast } from "@/components/Toast";
+import { axiosClient } from "@/shared/api/axios";
+import { customToast } from "@/components/common/Toast";
 import {
 	QueryKey,
 	useMutation,
@@ -9,7 +9,7 @@ import {
 import { AxiosRequestConfig } from "axios";
 
 type TUseApiMutationOptions<TResponse, TParams> = {
-	queryKey?: QueryKey;
+	queryKey: QueryKey;
 	requestURL: string;
 	axiosRequestMethod: "post" | "put" | "delete";
 	axiosConfig?: AxiosRequestConfig;
@@ -41,7 +41,7 @@ export const useApiMutation = <TResponse, TParams = void>({
 				return data;
 			} catch (error: any) {
 				const normalizedError = {
-					message: error?.response?.data?.message || "Something went wrong.",
+					message: error?.response?.data?.detail || "Something went wrong.",
 					code: error?.response?.code || 500,
 				};
 				throw normalizedError;
@@ -49,8 +49,7 @@ export const useApiMutation = <TResponse, TParams = void>({
 		},
 		...mutationOptions,
 		onSuccess: (data, variables, context) => {
-			console.log("working");
-
+			queryClient.invalidateQueries({ queryKey: queryKey });
 			customToast.success(successMsg);
 			mutationOptions?.onSuccess?.(data, variables, context);
 		},

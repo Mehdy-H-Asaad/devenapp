@@ -1,4 +1,4 @@
-import { axiosClient } from "@/api/axios";
+import { axiosClient } from "@/shared/api/axios";
 import { UseQueryOptions, useQuery, QueryKey } from "@tanstack/react-query";
 import { AxiosRequestConfig } from "axios";
 
@@ -14,6 +14,14 @@ type TUseApiQueryOptions<TResponse> = {
 	"queryKey" | "queryFn"
 >;
 
+type TServerResponse<T> = {
+	data: T;
+	limit?: number;
+	total_rows?: number;
+	total_pages?: number;
+	current_page?: number;
+};
+
 export const useApiQuery = <TResponse>({
 	queryKey,
 	requestURL,
@@ -21,15 +29,13 @@ export const useApiQuery = <TResponse>({
 	enabled = true,
 	errorMessage = "Something went wrong",
 	...queryOptions
-}: TUseApiQueryOptions<TResponse>) => {
-	const query = useQuery<TResponse>({
+}: TUseApiQueryOptions<TServerResponse<TResponse>>) => {
+	const query = useQuery<TServerResponse<TResponse>>({
 		queryKey,
 		queryFn: async () => {
 			try {
-				const { data } = await axiosClient.get<TResponse>(
-					requestURL,
-					axiosConfig
-				);
+				const { data }: { data: TServerResponse<TResponse> } =
+					await axiosClient.get(requestURL, axiosConfig);
 				return data;
 			} catch (error: any) {
 				const normalizedError = {
@@ -42,9 +48,19 @@ export const useApiQuery = <TResponse>({
 				throw normalizedError;
 			}
 		},
+
 		enabled,
 		...queryOptions,
 	});
 
-	return query;
+	return {
+		...query,
+		data: query.data?.data,
+		metaData: {
+			limit: query.data?.limit || 10,
+			total_rows: query.data?.total_rows || 0,
+			total_pages: query.data?.total_pages || 0,
+			current_page: query.data?.current_page || 1,
+		},
+	};
 };
