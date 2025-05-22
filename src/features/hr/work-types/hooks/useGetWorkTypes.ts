@@ -1,13 +1,27 @@
-import { useApiQuery } from "@/hooks/useApiQuery";
-import { TWorkTypeDTO } from "../types";
+import { useApiQuery } from "@/shared/hooks/useApiQuery";
+import { TWorkTypeDTO } from "../index";
+import { TPagination } from "@/shared/types";
+import { WORK_TYPES } from "../../index";
 
-export const useGetWorkTypes = () => {
-	const { data: response, isLoading: isLoadingWorkTypes } = useApiQuery<
-		TWorkTypeDTO[]
-	>({
-		queryKey: ["work-types"],
+export const useGetWorkTypes = (pagination: TPagination = {}) => {
+	const {
+		data: workTypes,
+		isFetching: isLoadingWorkTypes,
+		metaData,
+	} = useApiQuery<TWorkTypeDTO[]>({
+		queryKey: [WORK_TYPES, pagination],
 		requestURL: "/api/v1/work-type/",
+		axiosConfig: {
+			params: {
+				limit: pagination.limit,
+				page: pagination.current_page,
+			},
+		},
 	});
 
-	return { workTypes: response?.data, isLoadingWorkTypes };
+	return {
+		workTypes,
+		isLoadingWorkTypes,
+		metaData,
+	};
 };

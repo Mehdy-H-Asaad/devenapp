@@ -1,10 +1,11 @@
-import { useApiMutation } from "@/hooks/useApiMutation";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
+import { WORK_TYPES } from "../../index";
 
 export const useDeleteWorkType = (id: string) => {
 	const { mutate: deleteWorkType, isPending: isDeletingWorkType } =
 		useApiMutation({
 			axiosRequestMethod: "delete",
-			queryKey: ["work-types"],
+			queryKey: [WORK_TYPES],
 			requestURL: `/api/v1/work-type/${id}`,
 			successMsg: "Work Type deleted successfully",
 		});
