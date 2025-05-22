@@ -82,7 +82,7 @@ export function DataTable<TData, TValue>({
 
 	return (
 		<div>
-			<div className="flex items-center justify-between gap-">
+			<div className="flex items-center justify-between">
 				<Input
 					placeholder={searchablePlaceholder}
 					value={
@@ -116,7 +116,19 @@ export function DataTable<TData, TValue>({
 						))}
 					</TableHeader>
 					<TableBody>
-						{table.getRowModel().rows?.length ? (
+						{isLoading ? (
+							[...Array(10)].map((_, index) => (
+								<TableRow key={index} className="border border-gray-500">
+									{[...Array(skeletonRows)].map((_, cellIndex) => (
+										<TableCell key={cellIndex} className="h-24 text-center">
+											<div className="space-y-2">
+												<Skeleton className="h-4 w-[100px]" />
+											</div>
+										</TableCell>
+									))}
+								</TableRow>
+							))
+						) : table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map(row => (
 								<TableRow
 									className="border border-gray-500"
@@ -129,18 +141,6 @@ export function DataTable<TData, TValue>({
 												cell.column.columnDef.cell,
 												cell.getContext()
 											)}
-										</TableCell>
-									))}
-								</TableRow>
-							))
-						) : isLoading ? (
-							[...Array(skeletonRows)].map((_, index) => (
-								<TableRow key={index} className="border border-gray-500">
-									{[...Array(skeletonRows)].map((_, cellIndex) => (
-										<TableCell key={cellIndex} className="h-24 text-center">
-											<div className="space-y-2">
-												<Skeleton className="h-4 w-[100px]" />
-											</div>
 										</TableCell>
 									))}
 								</TableRow>

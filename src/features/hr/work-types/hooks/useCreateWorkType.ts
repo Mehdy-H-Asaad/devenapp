@@ -1,19 +1,20 @@
-import { useApiMutation } from "@/hooks/useApiMutation";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { TCreateWorkTypeDTO, TWorkTypeDTO } from "../types";
+import { TCreateWorkTypeDTO, TWorkTypeDTO } from "../index";
+import { WORK_TYPES } from "../../index";
 
 export const useCreateWorkType = () => {
-	const {
-		data,
-		mutate,
-		isPending: isCreatingWorkType,
-	} = useApiMutation<TWorkTypeDTO, TCreateWorkTypeDTO>({
+	const { mutate, isPending: isCreatingWorkType } = useApiMutation<
+		TWorkTypeDTO,
+		TCreateWorkTypeDTO
+	>({
 		axiosRequestMethod: "post",
 		requestURL: "/api/v1/work-type/",
 		successMsg: "Work Type created successfully",
-		queryKey: ["work-types"],
+		queryKey: [WORK_TYPES],
+		onSuccess: () => CreateWorkTypeForm.reset(),
 	});
 
 	const createWorkTypeSchema = z.object({
@@ -32,8 +33,6 @@ export const useCreateWorkType = () => {
 	const onCreateWorkType = (values: TCreateWorkTypeSchema) => {
 		mutate(values);
 	};
-
-	console.log(data);
 
 	return { CreateWorkTypeForm, onCreateWorkType, isCreatingWorkType };
 };

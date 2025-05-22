@@ -1,8 +1,9 @@
-import { useApiMutation } from "@/hooks/useApiMutation";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { TWorkTypeDTO } from "../types";
+import { TWorkTypeDTO } from "../index";
+import { WORK_TYPES } from "../../index";
 
 export const useUpdateWorkType = (id: number) => {
 	const { mutate, isPending: isUpdatingWorkType } = useApiMutation<
@@ -10,7 +11,7 @@ export const useUpdateWorkType = (id: number) => {
 		TUpdateWorkTypeSchema
 	>({
 		axiosRequestMethod: "put",
-		queryKey: ["work-types"],
+		queryKey: [WORK_TYPES],
 		requestURL: `/api/v1/work-type/${id}`,
 		successMsg: "Work Type updated successfully",
 	});
