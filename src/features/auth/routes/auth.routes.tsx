@@ -1,4 +1,4 @@
-import { StepGuard } from "@/utils/StepGuard";
+import { StepGuard } from "@/shared/utils/StepGuard";
 import { RouteObject } from "react-router-dom";
 import { EmailVerification } from "../components/signup/steps/EmailVerification";
 import { Signup } from "../components/signup/Signup";

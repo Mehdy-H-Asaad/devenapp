@@ -1,5 +1,5 @@
 import { BasicInfoSignup } from "./steps/BasicInfoSignup";
-import { AuthFormCard } from "@/components/AuthFormCard";
+import { AuthFormCard } from "@/components/common/AuthFormCard";
 export const Signup = () => {
 	return (
 		<AuthFormCard

@@ -10,7 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { usePersonalInfoSignUp } from "../../../hooks/signup/usePersonalInfoSignUp";
-import { AuthFormCard } from "@/components/AuthFormCard";
+import { AuthFormCard } from "@/components/common/AuthFormCard";
 
 export const PersonalInfoSignup = () => {
 	const { PersonalInfoForm, onPersonalInfoSubmit } = usePersonalInfoSignUp();

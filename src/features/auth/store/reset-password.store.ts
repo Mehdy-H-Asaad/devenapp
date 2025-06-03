@@ -1,4 +1,4 @@
-import { customStepStore } from "@/utils/customStepStore";
+import { customStepStore } from "@/shared/hooks/useCustomStore";
 
 type TResetPasswordDTO = {
 	newPassword: string;

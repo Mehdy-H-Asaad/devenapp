@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useApiMutation } from "@/hooks/useApiMutation";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { TUser, TSignUp } from "../../types/auth.types";
 import { useSignUpStore } from "../../store/signup.store";
 

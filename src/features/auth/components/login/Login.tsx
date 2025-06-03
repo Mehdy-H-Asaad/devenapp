@@ -1,5 +1,5 @@
 import { LoginForm } from "./LoginForm";
-import { AuthFormCard } from "@/components/AuthFormCard";
+import { AuthFormCard } from "@/components/common/AuthFormCard";
 
 export const Login = () => {
 	return (

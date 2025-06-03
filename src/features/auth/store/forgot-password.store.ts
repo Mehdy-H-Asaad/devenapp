@@ -1,11 +1,11 @@
-import { createCustomStore } from "@/utils/customStepStore";
+import { useCustomStore } from "@/shared/hooks/useCustomStore";
 
 type TForgotPasswordStore = {
 	email: string;
 	code: string;
 };
 
-export const useForgotPasswordStore = createCustomStore<TForgotPasswordStore>({
+export const useForgotPasswordStore = useCustomStore<TForgotPasswordStore>({
 	email: "",
 	code: "",
 });
