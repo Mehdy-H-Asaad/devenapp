@@ -8,6 +8,15 @@
 	--color-sidebar-light: oklch(0.99 0 0);
 	--color-main-blue: #2563eb;
 	--color-secondary-blue: #0052cc;
+	--color-main-form: #f8f8f8;
+	--color-main-white: #f9fbfc;
+	--color-main-purple: #5d33e5;
+	--color-main-green: oklch(0.627 0.194 149.214);
+	--color-secondary-green: #def1e5;
+	--color-main-gray: #8e8b96;
+}
+html {
+	overflow: hidden;
 }
 
 @theme durations {
@@ -16,6 +25,9 @@
 
 @theme fontSizes {
 	--text-small: 14px;
+}
+@theme spacing {
+	--spacing-main-spacing: 2rem;
 }
 
 @custom-variant dark (&:is(.dark *));
