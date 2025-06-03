@@ -6,7 +6,7 @@ export const useDeleteWorkType = (id: string) => {
 		useApiMutation({
 			axiosRequestMethod: "delete",
 			queryKey: [WORK_TYPES],
-			requestURL: `/api/v1/work-type/${id}`,
+			requestURL: `/api/v1/work-types/${id}`,
 			successMsg: "Work Type deleted successfully",
 		});
 

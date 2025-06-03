@@ -6,7 +6,7 @@ export const useDeleteJobPosition = (id: number) => {
 		useApiMutation({
 			axiosRequestMethod: "delete",
 			queryKey: [JOB_POSITIONS],
-			requestURL: `/api/v1/job-title/${id}`,
+			requestURL: `/api/v1/job-titles/${id}`,
 			successMsg: "Job Position deleted successfully",
 		});
 

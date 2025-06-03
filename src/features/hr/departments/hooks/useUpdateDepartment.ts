@@ -14,7 +14,7 @@ export const useUpdateDepartment = (id: number) => {
 	} = useApiMutation<TDepartmentsDTO, TUpdateDepartmentDTO>({
 		axiosRequestMethod: "put",
 		queryKey: [DEPARTMENTS],
-		requestURL: `/api/v1/department/${id}`,
+		requestURL: `/api/v1/departments/${id}`,
 		successMsg: "Department updated successfully",
 	});
 

@@ -12,7 +12,7 @@ export const useCreateJobPosition = () => {
 	>({
 		axiosRequestMethod: "post",
 		queryKey: [JOB_POSITIONS],
-		requestURL: "/api/v1/job-title/",
+		requestURL: "/api/v1/job-titles/",
 		successMsg: "Job Position created successfully",
 		onSuccess: () => CreateJobPositionForm.reset(),
 	});

@@ -9,7 +9,7 @@ export const useDeleteDepartment = (id: number) => {
 	} = useApiMutation({
 		axiosRequestMethod: "delete",
 		queryKey: [DEPARTMENTS],
-		requestURL: `/api/v1/department/${id}`,
+		requestURL: `/api/v1/departments/${id}`,
 		successMsg: "Department deleted succesfully",
 	});
 

@@ -13,7 +13,7 @@ export const useCreateLocation = () => {
 	>({
 		axiosRequestMethod: "post",
 		queryKey: [LOCATIONS],
-		requestURL: "/api/v1/location/",
+		requestURL: "/api/v1/locations/",
 		successMsg: "Location created successfully",
 		onSuccess: () => CreateLocationForm.reset(),
 	});

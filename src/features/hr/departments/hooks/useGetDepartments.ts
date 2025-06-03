@@ -10,7 +10,7 @@ export const useGetDepartments = (pagination: TPagination = {}) => {
 		metaData,
 	} = useApiQuery<TDepartmentsDTO[]>({
 		queryKey: [DEPARTMENTS, pagination],
-		requestURL: "/api/v1/department/",
+		requestURL: "/api/v1/departments/",
 		axiosConfig: {
 			params: {
 				limit: pagination.limit,

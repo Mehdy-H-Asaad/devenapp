@@ -24,3 +24,11 @@ export const HOURS = [
 	{ label: "10:00 PM", value: "22:00" },
 	{ label: "11:00 PM", value: "23:00" },
 ];
+
+export const MARTIAL_STATUS = [
+	{ label: "Single", value: "Single" },
+	{ label: "Married", value: "married" },
+	{ label: "Divorced", value: "divorced" },
+	{ label: "Widowed", value: "widowed" },
+	{ label: "Separated", value: "separated" },
+];

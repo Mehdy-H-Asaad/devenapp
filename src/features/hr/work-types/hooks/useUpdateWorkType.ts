@@ -12,7 +12,7 @@ export const useUpdateWorkType = (id: number) => {
 	>({
 		axiosRequestMethod: "put",
 		queryKey: [WORK_TYPES],
-		requestURL: `/api/v1/work-type/${id}`,
+		requestURL: `/api/v1/work-types/${id}`,
 		successMsg: "Work Type updated successfully",
 	});
 

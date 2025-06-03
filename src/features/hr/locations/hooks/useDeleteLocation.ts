@@ -6,7 +6,7 @@ export const useDeleteLocation = (id: number) => {
 		useApiMutation({
 			axiosRequestMethod: "delete",
 			queryKey: [LOCATIONS],
-			requestURL: `/api/v1/location/${id}`,
+			requestURL: `/api/v1/locations/${id}`,
 			successMsg: "Location deleted successfully",
 		});
 

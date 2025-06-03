@@ -10,7 +10,7 @@ export const useGetWorkTypes = (pagination: TPagination = {}) => {
 		metaData,
 	} = useApiQuery<TWorkTypeDTO[]>({
 		queryKey: [WORK_TYPES, pagination],
-		requestURL: "/api/v1/work-type/",
+		requestURL: "/api/v1/work-types/",
 		axiosConfig: {
 			params: {
 				limit: pagination.limit,

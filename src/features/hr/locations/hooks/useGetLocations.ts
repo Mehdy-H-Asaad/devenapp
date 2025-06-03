@@ -10,7 +10,7 @@ export const useGetLocations = (pagination: TPagination = {}) => {
 		metaData,
 	} = useApiQuery<TLocationDTO[]>({
 		queryKey: [LOCATIONS, pagination],
-		requestURL: "/api/v1/location/",
+		requestURL: "/api/v1/locations/",
 		axiosConfig: {
 			params: {
 				limit: pagination.limit,
