@@ -19,6 +19,7 @@ export type TUser = {
 	address: string;
 	role: string;
 	status: string;
+	access_token: string;
 };
 
 export type TLoginDTO = {

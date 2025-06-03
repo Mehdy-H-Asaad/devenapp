@@ -1,4 +1,4 @@
-import { useApiMutation } from "@/hooks/useApiMutation";
+import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { useNavigate } from "react-router-dom";
 import { baseAuthSchema } from "../../schema/base-auth.schema";
 import { z } from "zod";
