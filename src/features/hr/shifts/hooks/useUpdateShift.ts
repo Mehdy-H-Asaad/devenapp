@@ -13,7 +13,7 @@ export const useUpdateShift = (id: number) => {
 	>({
 		axiosRequestMethod: "put",
 		queryKey: [SHIFTS],
-		requestURL: `/api/v1/shift/${id}`,
+		requestURL: `/api/v1/shifts/${id}`,
 		successMsg: "Shift updated successfully",
 	});
 

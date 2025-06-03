@@ -13,7 +13,7 @@ export const useUpdateLocation = (id: number) => {
 	>({
 		axiosRequestMethod: "put",
 		queryKey: [LOCATIONS],
-		requestURL: `/api/v1/location/${id}`,
+		requestURL: `/api/v1/locations/${id}`,
 		successMsg: "Location updated successfully",
 	});
 

@@ -12,7 +12,7 @@ export const useUpdateJobPosition = (id: number) => {
 	>({
 		axiosRequestMethod: "put",
 		queryKey: [JOB_POSITIONS],
-		requestURL: `/api/v1/job-title/${id}`,
+		requestURL: `/api/v1/job-titles/${id}`,
 		successMsg: "Job Position updated successfully",
 	});
 

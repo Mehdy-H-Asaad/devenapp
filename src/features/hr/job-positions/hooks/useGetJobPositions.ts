@@ -10,7 +10,7 @@ export const useGetJobPositions = (pagination: TPagination = {}) => {
 		metaData,
 	} = useApiQuery<TJobPositionsDTO[]>({
 		queryKey: [JOB_POSITIONS, pagination],
-		requestURL: "/api/v1/job-title/",
+		requestURL: "/api/v1/job-titles/",
 		axiosConfig: {
 			params: {
 				limit: pagination.limit,

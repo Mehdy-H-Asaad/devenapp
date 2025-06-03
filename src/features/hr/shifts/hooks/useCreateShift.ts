@@ -12,7 +12,7 @@ export const useCreateShift = () => {
 		TCreateShiftDTO
 	>({
 		axiosRequestMethod: "post",
-		requestURL: "/api/v1/shift/",
+		requestURL: "/api/v1/shifts/",
 		successMsg: "Shift created successfully",
 		queryKey: [SHIFTS],
 		onSuccess: () => CreateShiftForm.reset(),

@@ -7,3 +7,5 @@ export const DEPARTMENTS = "departments";
 export const WORK_TYPES = "work-types";
 
 export const SHIFTS = "shifts";
+
+export const EMPLOYEES = "employees";

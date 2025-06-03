@@ -13,7 +13,7 @@ export const useCreateDepartment = () => {
 	>({
 		axiosRequestMethod: "post",
 		queryKey: [DEPARTMENTS],
-		requestURL: "/api/v1/department/",
+		requestURL: "/api/v1/departments/",
 		successMsg: "Department created successfully",
 		onSuccess: () => CreateDepartmentForm.reset(),
 	});

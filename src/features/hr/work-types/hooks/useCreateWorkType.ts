@@ -11,7 +11,7 @@ export const useCreateWorkType = () => {
 		TCreateWorkTypeDTO
 	>({
 		axiosRequestMethod: "post",
-		requestURL: "/api/v1/work-type/",
+		requestURL: "/api/v1/work-types/",
 		successMsg: "Work Type created successfully",
 		queryKey: [WORK_TYPES],
 		onSuccess: () => CreateWorkTypeForm.reset(),
